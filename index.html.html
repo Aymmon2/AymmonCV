@@ -450,7 +450,64 @@
             bottom: 1px;
             right: 36%;
             }
+            /* Responsive mobile style */
+            @media (max-width: 576px) {
+                .orbit {
+                    display: none !important;
+                }
+                }
 
+                @media (max-width: 1024px) {
+                .orbit {
+                    min-height: 400px;
+                    padding: 1rem;
+                }
+
+                .orbit-container {
+                    max-width: 320px;
+                    height: 160px;
+                }
+
+                .orbit-text,
+                .glass-text {
+                    font-size: 1.1rem;
+                    padding: 0.5rem 1rem;
+                }
+
+                .center1 {
+                    position: absolute;
+                    bottom: 76px;
+                    right: 30%;
+                }
+                .center2 {
+                    position: absolute;
+                    bottom: 38px;
+                    right: 23%;
+                }
+                .video {
+                position: absolute;
+                top: 62px;
+                left: -49%;
+                transition: top 0.4s cubic-bezier(.4,2,.6,1);
+                }
+                .website {
+                position: absolute;
+                top: -31px;
+                left: 77%;
+                transition: top 0.4s cubic-bezier(.4,2,.6,1), left 0.4s cubic-bezier(.4,2,.6,1);
+                }
+                .branding {
+                    position: absolute;
+                    bottom: 161px;
+                    left: -16%;
+                }
+                .social {
+                    position: absolute;
+                    bottom: -9px;
+                    right: -49%;
+                    transition: right 0.4s cubic-bezier(.4,2,.6,1);
+                }
+            }
         /* service  */
         .service {
         border: none;
@@ -568,7 +625,6 @@
     transform: scale(1.1);
     transition: transform 0.3s ease;
     }
-
 /* ...existing code... */
   </style>
 </head>
