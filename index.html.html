@@ -1,269 +1,919 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Aymmon Espiritu CV</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/introjs.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/4.1.0/intro.min.js"></script>
-    
-    </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scaled Spas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background: #e1e4ed;
+      color: rgb(0, 0, 0);
+      min-height: 100vh;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    }
+
+/* ...existing code... */
+    .navbar-glass {
+      padding: 1rem 2rem;
+    }
+    .navbar-brand-gradient {
+    font-weight: bold;
+    background: linear-gradient(to right,rgb(90, 86, 86), rgba(0, 0, 0, 1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Keep text transparent to show gradient */
+}
+    /* Banner */
+    .banner {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right,rgb(90, 86, 86), rgba(0, 0, 0, 1));
+        border-radius: 15px;
+        padding: 1.5rem 2rem;
+        max-width: auto;
+        margin: 2rem auto;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        }
+
+    .banner button {
+        background: linear-gradient(to right,rgb(90, 86, 86), rgba(0, 0, 0, 1));
+        transform: scale(1.05);
+        border: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        color: #ffffff;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-size: 1rem;
+        }
+
+    .banner button:hover {
+        background: rgba(255, 255, 255, 0.5);
+        }
+    /* End of Banner */
+
+    .left-card {
+      background-image: url('scaled_spas_logo.png');
+      background-size: cover;
+      background-position: center;
+      padding: 3rem;
+      height: 580px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .left-card h2 {
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 1.4;
+        color: #fff;
+        text-shadow: 0 0 8px rgba(0,0,0,0.7);
+
+        /* Shining effect setup */
+        position: relative;
+        background: linear-gradient(
+            90deg,
+            #fff 25%,
+            #c8baba 50%,
+            #fff 75%
+        );
+        background-size: 200% 100%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: shine 10s linear infinite;
+    }
+
+    @keyframes shine {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
+
+    .left-card p {
+        font-size: 1rem;
+        margin: 1rem auto 2rem auto;
+        max-width: 500px;
+        opacity: 0.9;
+        color: #eee;
+        text-shadow: 0 0 6px rgba(0,0,0,0.6);
+    }
+
+    .glass-input::placeholder {
+      color: white;
+      opacity: 0.8;
+    }
+
+    .glass-input,
+    .glass-button {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: none;
+      border-radius: 15px;
+      padding: 0.75rem 1rem;
+      color: white;
+      margin: 10px auto;
+      width: 60%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+
+
+    .glass-button:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scale(1.05);
+    }
+
+    .video-player {
+      position: relative;
+      width: 100%;
+      height: 580px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-player img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .play-button {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .play-button:hover {
+      transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .play-icon {
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    @media (max-width: 768px) {
+      .glass-input,
+      .glass-button {
+        width: 80%;
+      }
+
+      .left-card, .video-player {
+        height: auto;
+      }
+    }
+
+    /* carousel client log */
+        .clients-marquee-wrapper {
+            overflow: hidden;
+            position: relative;
+            /* Set height for logos */
+            height: 100px;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+        }
+        .clients-marquee {
+            display: flex;
+            align-items: center;
+            /* Animation for infinite scroll */
+            animation: scrollLeft 20s linear infinite;
+        }
+
+        .clients-marquee img {
+            height: 80px;
+            margin-right: 40px;
+            flex-shrink: 0;
+        }
+        @keyframes scrollLeft {
+            0% {
+            transform: translateX(0);
+            }
+            100% {
+            transform: translateX(-50%);
+            }
+        }
+    /* End of carousel client log */
+    /* service cotainer */
+        .planet-bg {
+        background-image: url('marketingcard2.png'); /* your image path */
+        background-size: cover;
+        background-position: center;
+        transition: background-position 3s ease-in-out, transform 3s ease-in-out;
+        color: #fff
+        }
+
+        .planet-bg:hover {
+        background-position: 60% 60%; /* adjust as you like to create movement */
+        transform: scale(1.05) translate(-10px, -10px);
+        }
+
+        /* col 2 circle */
+        .planet-bg-2 {
+        background: url('marketingcard3.png') center center/cover no-repeat;
+        border-radius: 20px;
+        min-height: 220px;
+        position: relative;
+        }
+        /* Reflect light effect */
+        .planet-bg-2::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -75%;
+        width: 50%;
+        height: 200%;
+        background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0) 0%,     /* fully transparent */
+            rgba(255, 255, 255, 0.2) 50%,   /* less visible shine */
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: rotate(25deg);
+        pointer-events: none;
+        transition: all 0.6s ease;
+        }
+
+
+        .planet-bg-2:hover::before {
+        left: 125%;
+        transition: all 0.8s ease-out;
+        }
+        .circle-animation-2 {
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        animation: rotateCircle 8s linear infinite;
+        z-index: 2;
+        pointer-events: none;
+        }
+        .circle-img-2 {
+        position: absolute;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2.5px solid #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+        /* Position each image around the circle using trigonometry */
+        top: calc(50% + 120px * sin(var(--angle)));
+        left: calc(50% + 120px * cos(var(--angle)));
+        transform: translate(-50%, -50%);
+        transition: box-shadow 0.3s;
+        pointer-events: auto;
+        }
+        .circle-img-2:hover {
+        box-shadow: 0 0 0 4px #ffe082, 0 2px 8px rgba(0,0,0,0.18);
+        z-index: 3;
+        }
+        @keyframes rotateCircle {
+        0% { transform: translate(-50%, -50%) rotate(0deg);}
+        100% { transform: translate(-50%, -50%) rotate(360deg);}
+        }
+
+        /* col 3  */
+        .strike-hover {
+        position: relative;
+        text-decoration: line-through;
+        opacity: 0.5;
+        transition: all 0.4s ease;
+        }
+
+        .strike-hover:hover {
+        text-decoration: none;
+        opacity: 1;
+        }
+
+        /* orbit col */
+        .orbit {
+            background-image: url('orbit.png'); /* your image path */
+            background-size: cover;
+            background-position: center;
+            transition: background-position 3s ease-in-out, transform 3s ease-in-out;
+            min-height: 600px; /* Add this line to set the height */
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+
+            }
+            .glass-text {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.4;
+            padding: 0.5rem 1rem;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+
+            /* Initial Gradient Text */
+            background: linear-gradient(135deg, #111 30%, #aaa 70%, #fff 100%);
+            background-size: 200% auto;
+            background-position: left center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+
+            /* Transition for smooth change */
+            transition: background-position 1s ease;
+            }
+
+            /* Hover on orbit triggers the effect */
+            .orbit:hover .glass-text {
+            background-position: right center;
+            }
+            .orbit-text {
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1); /* translucent white */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            text-align: center;
+            }
+            .orbit-container {
+            position: relative;
+            width: 100%;
+            height: 200px; /* adjust as needed */
+            }
+
+            .video {
+            position: absolute;
+            top: 62px;
+            left: 15%;
+            transition: top 0.4s cubic-bezier(.4,2,.6,1);
+            }
+            .orbit:hover .video {
+            top: 100px;
+            }
+            .social {
+            position: absolute;
+            bottom: -9px;
+            right: 12%;
+            transition: right 0.4s cubic-bezier(.4,2,.6,1);
+            }
+            .orbit:hover .social {
+            right: 14%;
+            }
+            .ads {
+            position: absolute;
+            bottom: 225px;
+            right: 20%;
+            }
+            .branding {
+            position: absolute;
+            bottom: 300px;
+            left:22%;
+            }
+            .website {
+            position: absolute;
+            top: -130px;
+            left: 52%;
+            transition: top 0.4s cubic-bezier(.4,2,.6,1), left 0.4s cubic-bezier(.4,2,.6,1);
+            }
+            .orbit:hover .website {
+            top: -151px;
+            left: 45%;
+            }
+            .marketing {
+            position: absolute;
+            bottom: -70px;
+            right: 61%;
+            transition: bottom 0.4s cubic-bezier(.4,2,.6,1), right 0.4s cubic-bezier(.4,2,.6,1);
+            }
+            .orbit:hover .marketing {
+            bottom: -117px;
+            right: 56%;
+            }
+            .center1 {
+            position: absolute;
+            bottom: 66px;
+            right: 40%;
+            }
+            .center2 {
+            position: absolute;
+            bottom: 1px;
+            right: 36%;
+            }
+
+        /* service  */
+        .service {
+        border: none;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        transition: transform 0.4s ease;
+        }
+
+        .service:hover .service-img {
+        transform: scale(1.05);
+        }
+
+        .service h5 {
+        transition: color 0.3s ease;
+        }
+
+        .service:hover h5 {
+        color: #d4a4a4;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .tag {
+        background: rgba(255, 255, 255, 0.1); /* translucent white */
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 0.3rem 0.75rem;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        }
+        .service:hover .tag {
+      background-color: #d9dce5;
+    }
+
+    .filter-btn {
+      border-radius: 1rem;
+      padding: 0.5rem 1.2rem;
+      font-size: 0.9rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+    }
+    /* blog   */
+    .blog-card {
+      background: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .blog img.profile {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 0.75rem;
+    }
+
+    .blog .tag {
+      background-color: #f0f1f5;
+      border-radius: 20px;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      margin: 0.2rem;
+      display: inline-block;
+    }
+
+    .blog .sample-img {
+      border-radius: 1rem;
+      width: 100%;
+      margin: 1rem 0;
+      object-fit: cover;
+    }
+
+    .blog .btn-dark {
+      border-radius: 1.5rem;
+      padding: 0.6rem 1.5rem;
+    }
+
+    .blog .nav-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* footer  */
+
+    .footer a:hover {
+    text-decoration: underline;
+    color: #007bff;
+    }
+    .footer .btn:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    }
+
+/* ...existing code... */
+  </style>
+</head>
 <body>
-    <div class="resume">
-        <div class="first-column">
-            <div class="profile-picture">
-                <img  src="image/aymmon_pic_grad_circle.png"  alt="Your Profile Picture">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg glass navbar-glass mb-4">
+        <div class="container-fluid">
+        <a class="navbar-brand navbar-brand-gradient" href="#">Scaled Spas</a>
+        <div class="ms-auto">
+            <a href="#" class="navbar-brand-gradient">Home</a>
+            <a href="#" class="navbar-brand-gradient">Contact</a>
+        </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="row g-4 align-items-stretch">
+            <div class="banner">
+                <span>🔥 SUMMER DEAL: 33% Off Coaching Class</span>
+                <button>Book demo</button>
             </div>
-            <div class="name">
-                <h1>AYMMONnnnn SILAGPO ESPIRITU</h1>
-                    <div class="course">
-                        <h3>INFORMATION TECHNOLOGY</h3>
-                    </div>
+        <!-- Left Card -->
+        <div class="col-lg-8">
+            <div class="glass left-card">
+            <h2>WHERE COMPANIES <br> MATCH WITH TOP-CLASS TALENT</h2>
+            <p>Match with high-quality talent in one day. Be ready to achieve awesome results in the next.</p>
+            <input type="email" class="form-control glass-input" placeholder="Email address">
+            <button class="glass-button mt-3">Book demo</button>
             </div>
         </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="left-column col-md-6">
-                            <div class="section Contact">
-                                <h1>Contact</h1>
-                                <i class="bi bi-telephone-inbound-fill"> 09129840632</i><br>
-                                <i class="bi bi-geo-alt-fill"> 3031 GH Delpilar St Pag- asa Camarin Caloocan city</i><br>
-                                <i class="bi bi-envelope-at-fill"> aymmon.silagpo@gmail.com</i>
-                            </div>
-                            <div class="section Education">
-                                <h1>Education</h1>
-                                <span><strong> Access Computer College</strong> </span> <br>
-                                <span>Bachelor of science in information technology</span> <br>
-                                <span>2018 - 2022</span> <br>
-                            </div>
+        <!-- Right Card -->
+        <div class="col-lg-4">
+            <div class="glass video-player">
+            <img src="thumbnail.jpg" alt="Video thumbnail" />
+            <a href="https://www.instagram.com/reel/C2nW6JuPfS3/?utm_source=ig_web_copy_link&igsh=OXltdnl3MW5xM2xp" target="_blank" class="play-button">
+                <div class="play-icon"></div>
+            </a>
+            </div>
+        </div>
 
-                            <div class="section">
-                                <span><strong> Sampaguita High School</strong> </span> <br>
-                                <span>High School </span> <br>
-                                <span>2012 - 2016</span> <br>
-                            </div>
+        </div>
+    </div>
 
-                            <div class="section">
-                                <h1 class="Skills">Skills</h1>
-                                <i class="bi bi-mortarboard-fill Flutter"> Literate in C#, Sencha Js, Flutter</i><br>
-                                <i class="bi bi-bookmark-star-fill GitHub"> Proficient in GitHub,HTML, CSS, JavaScript</i><br>
-                                <i class="bi bi-bookmark-check-fill Laravel"> Proficient in MVC within the PHP Laravel Frameworks, utilizing MySQL Database</i><br>
-                            </div>
+    <!-- New Container for Moving Client Logos -->
+    <div class="container mt-5">
+        <div class="clients-marquee-wrapper">
+            <div class="clients-marquee">
+                <!-- Logos repeated twice for seamless effect -->
+                <img src="logo.png" alt="Client 1" />
+                <img src="nikelogo.png" alt="Client 2" />
+                <img src="logo.png" alt="Client 3" />
+                <img src="nikelogo.png" alt="Client 4" />
+                <img src="logo.png" alt="Client 5" />
+                <img src="nikelogo.png" alt="Client 6" />
 
-                            <div class="section Experience">
-                                <h1>Experience</h1>
-                                <i class="bi bi-cpu-fill Programmer"> Programmer in VPD Business Solution Inc.</i><br>
-                                <i class="bi bi-camera-reels-fill Freelancer"> Freelancer Video Editor</i><br>
-                                <i class="bi bi-camera-reels-fill Freelancer"> Freelancer Web Developer</i><br>
-                                <i class="bi bi-telephone-inbound-fill Consultant"> Product Consultant in WilconDepot Capitol.</i><br>
-                            </div>
+                <img src="logo.png" alt="Client 1" />
+                <img src="nikelogo.png" alt="Client 2" />
+                <img src="logo.png" alt="Client 3" />
+                <img src="nikelogo.png" alt="Client 4" />
+                <img src="logo.png" alt="Client 5" />
+                <img src="nikelogo.png" alt="Client 6" />
+            </div>
+            </div>
+    </div>
 
-                        </div>
-
-
-                        <div class="right-column col-md-6">
-                            <div class="section Objective">
-                                <h2>Objective</h2>
-                                <p>Seeking a challenging opportunity where I will be able to utilize my strong organizational skills, educational background, and ability to work well with people, which will allow me to grow personally and professionally.</p>
-                            </div>
-                            <div class="section" style="margin-top: 3.7rem;">
-                                <span><strong> Our Lady of Fatima University</strong> </span> <br>
-                                <span>Senior High </span> <br>
-                                <span>2016 - 2018</span> <br>
-                            </div>
-
-                            <div class="section">
-                                <span><strong> Sampaguita Elementary School</strong> </span> <br>
-                                <span>High School </span> <br>
-                                <span>2006 - 2012</span> <br>
-                            </div>
-
-                            <div class="section" style="margin-top: 4.7rem;">
-                                <i class="bi bi-camera-fill Photoshop"> Literate in Adobe Photoshop</i><br>
-                                <i class="bi bi-camera-reels-fill Premiere"> Proficient in Adobe Premiere</i><br>
-                                <i class="bi bi-pencil-fill Canva"> Literate in Canva</i><br>
-                                <i class="bi bi-gear-fill Troubleshooting"> Pc Troubleshooting</i><br>
-                            </div>
-
-                            <div class="section JBG" style="margin-top: 1rem;">
-                                <h5>Certificate of internship at JBG SolutionInc.</h5>
-                                <i class="bi bi-pencil-fill"> Designing Mobile Application layout using Framer</i><br>
-                                <i class="bi bi-gear-wide-connected"> Create MobileApplication Coding and design using Xamarin and Android studio</i><br>
-                            </div>
-                        </div>
+    <div class="container mt-5">
+        <div class="row g-4 align-items-stretch">
+            <!-- First col -->
+            <div class="col-md-4 d-flex">
+                <div class="glass p-0 flex-fill d-flex flex-column justify-content-center align-items-center shadow planet-bg" style="overflow:hidden; border-radius:20px; position:relative;">
+                    <div class="p-3" style="position:relative; z-index:1;">
+                        <h5 class="mb-2">Scaled Spas</h5>
+                        <p class="mb-0" style="font-size:0.98rem;">Our marketing strategies are designed to help you amplify your brand and accelerate business growth.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Second col -->
+            <div class="col-md-4 d-flex">
+                <div class="glass p-0 flex-fill d-flex flex-column justify-content-center align-items-center shadow position-relative planet-bg-2" style="overflow:hidden;">
+                <div class="position-relative w-100 d-flex justify-content-center align-items-center" style="height:220px;">
+                    <!-- Rotating circle of avatars -->
+                    <div class="circle-animation-2 position-absolute top-50 start-50 translate-middle">
+                    <img src="talent1.png" class="circle-img-2" style="--angle:0deg;" />
+                    <img src="talent2.png" class="circle-img-2" style="--angle:60deg;" />
+                    <img src="talent3.png" class="circle-img-2" style="--angle:120deg;" />
+                    <img src="talent4.png" class="circle-img-2" style="--angle:180deg;" />
+                    <img src="talent5.png" class="circle-img-2" style="--angle:240deg;" />
+                    <img src="talent6.png" class="circle-img-2" style="--angle:300deg;" />
+                    </div>
+                    <span class="fw-bold position-absolute top-50 start-50 translate-middle text-light text-center" style="font-size:1.1rem; z-index:2; text-shadow:0 2px 8px #222;">We carefully curate and evaluate a vast pool of talent to ensure we select the most impactful ones for your brand</span>
+                </div>
+                </div>
+            </div>
+
+            <!-- Third col (with stacked inner elements) -->
+            <div class="col-md-4 d-flex flex-column">
+                <!-- Top part: matches height with other two -->
+                <div class="glass p-4 flex-fill d-flex flex-column justify-content-center align-items-center shadow mb-3">
+                    <h2 class="mb-1" style="font-weight:700; font-size:2.5rem; background: linear-gradient(90deg,#bbaaff,#fff); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">24</h2>
+                    <span class="fw-bold" style="font-size:1.1rem;">Hour turnaround</span>
+                    <p class="mb-0" style="font-size:0.98rem;">Get updates every workday</p>
+                </div>
+                <!-- Bottom part -->
+                <div class="glass p-4 d-flex flex-column justify-content-center align-items-start shadow">
+                    <h5 class="mb-2">Say goodbye to:</h5>
+                    <ul class="list-unstyled mb-0" style="font-size:0.98rem;">
+                    <li class="mb-1 strike-hover">× Searching for freelancers</li>
+                    <li class="mb-1 strike-hover">× Expensive digital agencies</li>
+                    <li class="mb-1 strike-hover">× Slow turnaround times</li>
+                    <li class="mb-1 strike-hover">× Scrolling through 100s of portfolios</li>
+                    <li class="mb-1 strike-hover">× Conducting dozens of interviews</li>
+                    <li class="mb-1 strike-hover">× And still having no one to hire</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-md-12 d-flex flex-column">
+                <div class="orbit">
+                    <div class="orbit-container">
+                        <h2 class="glass-text center1">Digital Task </h2>
+                        <p class="glass-text center2">All in Scaled Spas</p>
+                        <h4 class="orbit-text video">Video Edit</h4>
+                        <h4 class="orbit-text social">Social Media</h4>
+                        <h4 class="orbit-text ads">Ads</h4>
+                        <h4 class="orbit-text branding">Branding</h4>
+                        <h4 class="orbit-text website">Website</h4>
+                        <h4 class="orbit-text marketing">Marketing</h4>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-semibold">Explore what you can do with Scaled Spas</h2>
+            <div class="d-flex gap-2">
+              <button class="filter-btn">All services ▼</button>
+              <button class="filter-btn">All industries ▼</button>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Service 1 -->
+            <div class="col-md-4">
+              <div class="service">
+                <img src="service1.jpg" class="service-img w-100" alt="video editing">
+                <div class="p-3">
+                  <h5 class="fw-semibold">Video Editing</h5>
+                  <div class="d-flex flex-wrap">
+                    <div class="tag">Adobe After Effects</div>
+                    <div class="tag">Adobe Premiere Pro</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="col-md-4">
+              <div class="service">
+                <img src="service3.jpg"  class="service-img w-100" alt="web development">
+                <div class="p-3">
+                  <h5 class="fw-semibold">Full Stack Web Development</h5>
+                  <div class="d-flex flex-wrap">
+                    <div class="tag">HTML</div>
+                    <div class="tag">CSS</div>
+                    <div class="tag">LARAVEL</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="col-md-4">
+              <div class="service">
+                <img src="service2.jpg" class="service-img w-100" alt="social media management">
+                <div class="p-3">
+                  <h5 class="fw-semibold">Social Media Manager</h5>
+                  <div class="d-flex flex-wrap">
+                    <div class="tag">Instagram</div>
+                    <div class="tag">Facebook</div>
+                    <div class="tag">Tiktok</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    <div class="container py-5 blog">
+        <h2 class="text-center fw-semibold mb-4">Social Media</h2>
+
+        <div class="d-flex justify-content-center gap-2 mb-4">
+          <button class="btn btn-dark rounded-pill px-4">Instagram</button>
+          <button class="btn btn-light rounded-pill px-4">Facebook</button>
+        </div>
+
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="blog-card">
+              <div class="d-flex align-items-center mb-3">
+                <img src="talent5.png" alt="Anna" class="profile">
+                <div>
+                  <h5 class="mb-0 fw-semibold">scaledspas</h5>
+                  <small>Gabriel Correa</small>
+                </div>
+              </div>
+
+              <p class="fw-semibold mb-1">Entrepreneur</p>
+              <div>
+                <span class="tag">beauty</span>
+                <span class="tag">scale</span>
+                <span class="tag">professionals</span>
+              </div>
+              <img src="blog1.jpg" class="sample-img" alt="Work Sample">
+
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="nav-btn"><span>&larr;</span></button>
+                <button class="btn btn-dark">Book a call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="blog-card">
+              <div class="d-flex align-items-center mb-3">
+                <img src="talent5.png" alt="Valencia" class="profile">
+                <div>
+                  <h5 class="mb-0 fw-semibold">scaledspas</h5>
+                  <small>Gabriel Correa</small>
+                </div>
+              </div>
+              <p class="fw-semibold mb-1">Entrepreneur</p>
+              <div>
+                <span class="tag">beauty</span>
+                <span class="tag">scale</span>
+                <span class="tag">professionals</span>
+              </div>
+              <img src="blog2.jpg" class="sample-img" alt="Work Sample">
+
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="nav-btn"><span>&larr;</span></button>
+                <button class="btn btn-dark">Book a call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="blog-card">
+              <div class="d-flex align-items-center mb-3">
+                <img src="talent5.png" alt="Ruzanna" class="profile">
+                <div>
+                  <h5 class="mb-0 fw-semibold">scaledspas</h5>
+                  <small>Gabriel Correa</small>
+                </div>
+              </div>
+              <p class="fw-semibold mb-1">Entrepreneur</p>
+              <div>
+                <span class="tag">beauty</span>
+                <span class="tag">scale</span>
+                <span class="tag">professionals</span>
+              </div>
+              <img src="blog3.jpg" class="sample-img" alt="Work Sample">
+              <div class="d-flex justify-content-between align-items-center">
+                <button class="nav-btn"><span>&larr;</span></button>
+                <button class="btn btn-dark">Book a call</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container footer py-5">
+        <div class="row g-4">
+          <!-- Contact Box -->
+          <div class="col-lg-4">
+            <div class="bg-white rounded-4 shadow p-4 h-100">
+              <h5 class="fw-bold mb-3">Get in touch</h5>
+              <p class="mb-2">
+                <span class="me-2 text-primary">🌐</span>
+                420 2nd St, Office 316 San Francisco, CA 12345, US
+              </p>
+              <p class="mb-2">
+                <span class="me-2 text-danger">📞</span>
+                (123) 321-1234
+              </p>
+              <p class="mb-3">
+                <span class="me-2 text-dark">📧</span>
+                scaledspas@gmail.com
+              </p>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-light rounded-3"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="btn btn-light rounded-3"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="btn btn-light rounded-3"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="btn btn-light rounded-3"><i class="bi bi-twitter-x"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Link Groups -->
+          <div class="col-lg-8">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-4">
+              <div class="col">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-dark text-decoration-none">Pricing</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Portfolio</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Case studies</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">About us</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Services</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Blog</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-dark text-decoration-none">Awesomic help center</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Founders social club</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Marketing</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Terms & policies</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Awesomic for talents</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">Video editor</a></li>
+                </ul>
+              </div>
+              <div class="col">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="text-dark text-decoration-none">product designer</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">ui/ux designer</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">marketing designer</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">creative designer</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">freelance designer</a></li>
+                  <li><a href="#" class="text-dark text-decoration-none">logo designer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        introJs().setOptions({
-            steps: [
-                {
-                    title: 'Welcome',
-                    intro: 'Hello Visitors, please allow me to introduce myself. Click Next to continue.'
-                },
-                {
-                    element: document.querySelector('.first-column'),
-                    intro: 'My name is Aymmon Silagpo Espiritu, and I want to work in the IT industry..'
-                },
-                {
-                    element: document.querySelector('.Contact'),
-                    intro: 'My contact number is 09129840632, and you can reach me at 3031 GH Delpilar St, Pag-asa, Camarin, Caloocan City. Feel free to email me at aymmon.silagpo@gmail.com.'
-                },
-                {
-                    element: document.querySelector('.Objective'),
-                    intro: 'My Objective is Seeking a challenging opportunity to utilize organizational skills, education, and teamwork for personal and professional growth.'
-                },
-                {
-                    element: document.querySelector('.Education'),
-                    intro: 'I graduated from Access Computer College, where I pursued a Bachelor of Science in Information Technology (BSIT).'
-                },
-                {
-                    element: document.querySelector('.Skills'),
-                    intro: 'Skills that I gained in school and through experience.'
-                },
-                {
-                    element: document.querySelector('.Flutter'),
-                    intro: 'I am literate know C# and have experience with the front end of Sencha JS. Additionally, I have experimented with Flutter and have created sample Flutter UIs.'
-                },
-                {
-                    element: document.querySelector('.GitHub'),
-                    intro: 'In my previous job, I used GitHub and gained experience in utilizing HTML, CSS, and JavaScript for website front-end development.'
-                },
-                {
-                    element: document.querySelector('.Laravel'),
-                    intro: 'And In my previous job, I used Laravel for backend development with a MySQL database.'
-                },
-                {
-                    element: document.querySelector('.Photoshop'),
-                    intro: 'In my studies, I learned how to use Photoshop.'
-                },
-                {
-                    element: document.querySelector('.Premiere'),
-                    intro: 'I am currently engaging in self-study for Adobe Premiere with the goal of becoming a freelance video editor.'
-                },
-                {
-                    element: document.querySelector('.Canva'),
-                    intro: 'I also utilize Canva as an additional tool for my video editing.'
-                },
-                {
-                    element: document.querySelector('.Troubleshooting'),
-                    intro: 'I have acquired knowledge in PC troubleshooting through self-experience with my own computer. I was compelled to learn troubleshooting techniques for the sake of my computer and have successfully fixed issues independently.'
-                },
-                {
-                    element: document.querySelector('.Experience'),
-                    intro: 'This summarizes my work experience.'
-                },
-                {
-                    element: document.querySelector('.Programmer'),
-                    intro: 'At VPD, I programmed the website based on customer customizations.'
-                },
-                {
-                    element: document.querySelector('.Freelancer'),
-                    intro: 'I used to work as a freelancer, focusing on client customizations as part of my services.'
-                },
-                {
-                    element: document.querySelector('.Consultant'),
-                    intro: 'And i used to work as a sales consultant in wilcon depot, focusing on tiles sales.'
-                },
-                {
-                    element: document.querySelector('.JBG'),
-                    intro: 'During my internship, I created a mobile application for the grading system of Don Bosco High School using Xamarin, with design assistance from Framer.'
-                },
-                {
-                    element: document.querySelector('.resume'),
-                    intro: 'This concludes my introduction. Thank you so much for expressing interest in me!'
-                },
-            ]
-        }).start();
-    });
-</script>
-
-
-
-<style>
-    body {
-        font-family: 'Arial', sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background-color: #f2f4f5ff;
-    }
-    .resume {
-        display: flex;
-        flex-direction: column;
-        background-color: #ffffff;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 800px;
-        width: 100%;
-        overflow: hidden;
-    }
-    .first-column {
-        background-color: #ffffff;
-        padding: 20px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-    .name{
-        text-align: end;
-        margin-top: -15%;
-        margin-right: 2%;
-    }
-
-    .course{
-        text-align: end;
-        margin-right: 9%;
-
-    }
-
-    .profile-picture {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-bottom: 10px;
-    }
-
-    .profile-picture img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .left-column,
-    .right-column {
-        background-color: #ffffff;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-    .section {
-        margin-bottom: 20px;
-        text-align: left; /* Align text to the left within each section */
-    }
-    h1, h2 {
-        color: #333333;
-    }
-    p {
-        color: #666666;
-    }
-</style>
-
-
 </html>
