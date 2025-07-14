@@ -1,54 +1,36 @@
-let next = document.getElementById('next');
-let prev = document.getElementById('prev');
-let carousel = document.querySelector('.carousel');
-let items = document.querySelectorAll('.carousel .item');
-let countItem = items.length;
-let active = 1;
-let other_1 = null;
-let other_2 = null;
-next.onclick = () => {
-    carousel.classList.remove('prev');
-    carousel.classList.add('next');
-    active =active + 1 >= countItem ? 0 : active + 1;
-    other_1 =active - 1 < 0 ? countItem -1 : active - 1;
-    other_2 = active + 1 >= countItem ? 0 : active + 1;
-    changeSlider();
-}
-prev.onclick = () => {
-    carousel.classList.remove('next');
-    carousel.classList.add('prev');
-    active = active - 1 < 0 ? countItem - 1 : active - 1;
-    other_1 = active + 1 >= countItem ? 0 : active + 1;
-    other_2 = other_1 + 1 >= countItem ? 0 : other_1 + 1;
-    changeSlider();
-}
-const changeSlider = () => {
-    let itemOldActive = document.querySelector('.carousel .item.active');
-    if(itemOldActive) itemOldActive.classList.remove('active');
+const video1 = document.getElementById('projectVideo1');
+const video2 = document.getElementById('projectVideo2');
+const video3 = document.getElementById('projectVideo3');
 
-    let itemOldOther_1 = document.querySelector('.carousel .item.other_1');
-    if(itemOldOther_1) itemOldOther_1.classList.remove('other_1');
+// Sidebar elements //
+const sideBar = document.querySelector('.sidebar');
+const menu = document.querySelector('.menu-icon');
+const closeIcon = document.querySelector('.close-icon')
 
-    let itemOldOther_2 = document.querySelector('.carousel .item.other_2');
-    if(itemOldOther_2) itemOldOther_2.classList.remove('other_2');
 
-    items.forEach(e => {
-        e.querySelector('.image img').style.animation = 'none';
-        e.querySelector('.image figcaption').style.animation = 'none';
-        void e.offsetWidth;
-        e.querySelector('.image img').style.animation = '';
-        e.querySelector('.image figcaption').style.animation = '';
+const hoverSign = document.querySelector('.hover-sign');
+
+const videoList =[video1, video2, video3];
+
+videoList.forEach (function(video){
+    video.addEventListener("mouseover", function(){
+        video.play()
+        hoverSign.classList.add("active")
     })
+    video.addEventListener("mouseout", function(){
+    video.pause();
+    hoverSign.classList.remove("active")
+})
+})
 
-    items[active].classList.add('active');
-    items[other_1].classList.add('other_1');
-    items[other_2].classList.add('other_2');
+// Sidebar elements //
+menu.addEventListener("click", function(){
+    sideBar.classList.remove("close-sidebar")
+    sideBar.classList.add("open-sidebar")
+});
 
-    clearInterval(autoPlay);
-    autoPlay = setInterval(() => {
-        next.click();
-    }, 5000);
-}
-let autoPlay = setInterval(() => {
-    next.click();
-}, 5000);
+closeIcon.addEventListener("click", function(){
+    sideBar.classList.remove("open-sidebar");
+    sideBar.classList.add("close-sidebar");
+    
+})
